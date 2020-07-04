@@ -1,0 +1,4 @@
+/vendor
+/docker/data/mysql
+/docker/data/postgres
+.idea/

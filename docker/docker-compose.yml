@@ -1,0 +1,70 @@
+version: "2.1"
+
+networks:
+  webserver_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/16
+          gateway: 172.19.0.1
+
+services:
+  http_webserver:
+    build:
+      context: ./bin/webserver
+      args:
+        uid: ${UID}
+    container_name: ${WEBSERVER}
+    environment:
+      - APACHE_RUN_USER=#${UID}
+      - APACHE_RUN_GROUP=#${UID}
+    #restart: 'always'
+    ports:
+      - "80:80"
+    #      - "443:443"
+    links:
+      - mysql_webserver
+#      - postgres_webserver
+    volumes:
+      - ${DOCUMENT_ROOT-./www}:/var/www/html
+      - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
+      - ${VHOSTS_DIR72-./config/vhosts}:/etc/apache2/sites-enabled
+      - ${LOG_DIR-./logs/apache2}:/var/log/apache2
+
+    networks:
+      webserver_net:
+        ipv4_address: 172.19.0.10
+
+  mysql_webserver:
+    build: ./bin/mysql
+    container_name: ${MYSQL}
+    #restart: 'always'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
+      - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      webserver_net:
+        ipv4_address: 172.19.0.11
+
+#  postgres_webserver:
+#    container_name: ${POSTGRES}
+#    build: ./bin/postgresql
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - ${POSTGRES_DATA_DIR-./data/postgres}:/usr/local/pgsql
+#    environment:
+#      POSTGRES_DB: ${POSTGRES_DATABASE}
+#      POSTGRES_USER: ${POSTGRES_USER}
+#      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+#    networks:
+#      webserver_net:
+#        ipv4_address: 172.19.0.12

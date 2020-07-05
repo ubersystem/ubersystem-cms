@@ -112,3 +112,4 @@ docker exec -it http_webserver composer require webpatser/laravel-uuid
 
 docker exec -it http_webserver composer require nwidart/laravel-modules
 docker exec -it http_webserver php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+

@@ -121,6 +121,7 @@ class ComposerStaticInit65dfbd7442e213457bf3204070b671cf
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Modules\\' => 8,
         ),
         'L' => 
         array (
@@ -384,6 +385,10 @@ class ComposerStaticInit65dfbd7442e213457bf3204070b671cf
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Modules\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Modules',
         ),
         'League\\Flysystem\\' => 
         array (

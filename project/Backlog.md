@@ -61,10 +61,55 @@ Adicione a seguinte linha
 
 ubersystemcms.test é o dominio que será acessado no navegar para entrar na página.
 
-
-
 Geração da chave de criptografia
 ```
 docker exec -it http_webserver php artisan key:generate
 ```
+
+Criar arquivo do banco de dados no workbanck e colocar na pasta
+
+
+```
+docker exec -it http_webserver composer require laravel/ui
+```
+docker exec -it http_webserver php artisan ui bootstrap
+
+docker exec -it http_webserver php artisan ui bootstrap --auth
+
+
+Roda aas migrations no banco
+docker exec -it http_webserver php artisan migrate
+
+Próximas Atividades
+
+Instalar JWT
+execute na pasta src:
+npm install
+
+
+Instalar Bootstrap e views 
+
+Criar arquivos de login
+
+
+https://adminlte.io/themes/v3/index3.html
+
+Instalar AdminLTE V3
+
+
+jwt
+
+Commit 3
+
+docker exec -it http_webserver composer require tymon/jwt-auth ^1.0.0
+docker exec -it http_webserver php artisan jwt:secret
+docker exec -it http_webserver php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+
+
+
+docker exec -it http_webserver composer require webpatser/laravel-uuid
+
+docker exec -it http_webserver composer require nwidart/laravel-modules
+docker exec -it http_webserver php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
 

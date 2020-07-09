@@ -21,10 +21,14 @@ git clone git@github.com:ubersystem/ubersystem-cms.git
 
 ## Libraries
 
-Laravel - laravel/framework: ^7.0
-Modules - nwidart/laravel-modules : ^7.1
-JWT - tymon/jwt-auth: ^1.0.0
-UUID - webpatser/laravel-uuid: ^3.0
+* Laravel - laravel/framework: ^7.0
+* Modules - nwidart/laravel-modules : ^7.1
+* JWT - tymon/jwt-auth: ^1.0.0
+* UUID - webpatser/laravel-uuid: ^3.0
+
+## References
+
+This project was inspired by [asgardcms](http://https://github.com/AsgardCms/)
 
 ## Contributing 
 
@@ -47,7 +51,9 @@ The Ubersystem CMS is open-sourced software licensed under the MIT license.
 ## Author
 
 Juliano Carneiro 
-Email: juliano.carneiro@ubersystem.com.br
+
+[juliano.carneiro@ubersystem.com.br](mailto:juliano.carneiro@ubersystem.com.br?subject=[GitHub]%20Source%20Ubersystem%20CMS)
 
 [http://ubersystem.com.br](http://ubersystem.com.br)
-Uberlandia MG - Brasil
+
+Uberlândia - Minas Gerais - Brasil

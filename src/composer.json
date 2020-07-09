@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "nwidart/laravel-modules": "^7.1",
+        "shipu/themevel": "^2.2",
         "tymon/jwt-auth": "^1.0.0-rc.5.1",
         "webpatser/laravel-uuid": "^3.0"
     },

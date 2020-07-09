@@ -113,3 +113,63 @@ docker exec -it http_webserver composer require webpatser/laravel-uuid
 docker exec -it http_webserver composer require nwidart/laravel-modules
 docker exec -it http_webserver php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
 
+05/07/2020
+
+Instalação de biblioteca de themas
+
+docker exec -it http_webserver composer require shipu/themevel
+
+[shipu/themevel](https://github.com/Shipu/themevel)
+
+
+Modules
+
+baixar para a pasta, o arquivo deve estar no formato zip 
+
+storage/app/downloads/modules
+
+mod_blog_v1.0.0.zip
+mod_site_v1.0.0.zip
+
+descompacta para a pasta src/Modules com o mesmo nome:
+
+src/Modules/mod_blog_v1.0.0
+src/Modules/mod_site_v1.0.0
+
+
+php artisan storage:link
+ln -s /path/to/laravel/storage/app/public /path/to/laravel/public/storage
+
+Route::get('storage/{filename}', function ($filename)
+{
+    $path = storage_path('public/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

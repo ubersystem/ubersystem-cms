@@ -1115,6 +1115,66 @@
         ]
     },
     {
+        "name": "hassankhan/config",
+        "version": "v2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hassankhan/config.git",
+            "reference": "16fa4d3320ac9bb611dda0c8ea980edb58d227c9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hassankhan/config/zipball/16fa4d3320ac9bb611dda0c8ea980edb58d227c9",
+            "reference": "16fa4d3320ac9bb611dda0c8ea980edb58d227c9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8 || ~5.7 || ~6.5 || ~7.5",
+            "scrutinizer/ocular": "~1.1",
+            "squizlabs/php_codesniffer": "~2.2",
+            "symfony/yaml": "~3.4"
+        },
+        "suggest": {
+            "symfony/yaml": "~3.4"
+        },
+        "time": "2019-09-01T15:51:42+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Noodlehaus\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Hassan Khan",
+                "homepage": "http://hassankhan.me/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Lightweight configuration file loader that supports PHP, INI, XML, JSON, and YAML files",
+        "homepage": "http://hassankhan.me/config/",
+        "keywords": [
+            "config",
+            "configuration",
+            "ini",
+            "json",
+            "microphp",
+            "unframework",
+            "xml",
+            "yaml",
+            "yml"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "v7.18.0",
         "version_normalized": "7.18.0.0",
@@ -4169,6 +4229,73 @@
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
+        "name": "shipu/themevel",
+        "version": "v2.2.2",
+        "version_normalized": "2.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Shipu/themevel.git",
+            "reference": "ebf7b1d4e74bc3b1682fa7d892129100a95ac404"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Shipu/themevel/zipball/ebf7b1d4e74bc3b1682fa7d892129100a95ac404",
+            "reference": "ebf7b1d4e74bc3b1682fa7d892129100a95ac404",
+            "shasum": ""
+        },
+        "require": {
+            "hassankhan/config": "^2.1",
+            "symfony/yaml": "5.1.x-dev"
+        },
+        "require-dev": {
+            "graham-campbell/testbench": "^3.3",
+            "phpunit/phpunit": "^5.0"
+        },
+        "suggest": {
+            "symfony/yaml": "Allows for parsing of YAML theme info and change log files"
+        },
+        "time": "2020-05-09T15:57:57+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Shipu\\Themevel\\Providers\\ThemevelServiceProvider"
+                ],
+                "aliases": {
+                    "Theme": "Shipu\\Themevel\\Facades\\Theme"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Shipu\\Themevel\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "CC-BY-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Shipu Ahamed",
+                "email": "shipuahamed01@gmail.com"
+            }
+        ],
+        "description": "Theme and asset management for laravel 5",
+        "homepage": "https://github.com/shipu/themevel",
+        "keywords": [
+            "asset",
+            "child-theme",
+            "laravel",
+            "lumen",
+            "management",
+            "multi",
+            "theme",
+            "themevel"
+        ]
+    },
+    {
         "name": "swiftmailer/swiftmailer",
         "version": "v6.2.3",
         "version_normalized": "6.2.3.0",
@@ -6076,6 +6203,71 @@
             "debug",
             "dump"
         ]
+    },
+    {
+        "name": "symfony/yaml",
+        "version": "5.1.x-dev",
+        "version_normalized": "5.1.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "ea342353a3ef4f453809acc4ebc55382231d4d23"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/ea342353a3ef4f453809acc4ebc55382231d4d23",
+            "reference": "ea342353a3ef4f453809acc4ebc55382231d4d23",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2.5",
+            "symfony/deprecation-contracts": "^2.1",
+            "symfony/polyfill-ctype": "~1.8"
+        },
+        "conflict": {
+            "symfony/console": "<4.4"
+        },
+        "require-dev": {
+            "symfony/console": "^4.4|^5.0"
+        },
+        "suggest": {
+            "symfony/console": "For validating YAML files using the lint command"
+        },
+        "time": "2020-05-20T17:43:50+00:00",
+        "bin": [
+            "Resources/bin/yaml-lint"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Yaml\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "https://symfony.com"
     },
     {
         "name": "theseer/tokenizer",
